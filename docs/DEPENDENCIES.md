@@ -1,53 +1,53 @@
 # Dependencies & Source Repositories
 
-Privacycoin AI bouwt voort op bestaande privacy-technologie. Hieronder de officiële repositories die relevant zijn.
+Privacycoin AI bouwt voort op bestaande privacy- en high-performance technologie.
 
 ## Core Privacy Bases
 
 ### PRCY Coin
 - **Repo**: https://github.com/PRCYCoin/PRCYCoin
-- **Doel**: RingCT, Ring Signatures (27-32), Bulletproofs, Stealth Addresses, PoS + Masternodes + PoA
-- **Clone (shallow)**:
+- **Doel**: RingCT, Ring Signatures, Bulletproofs, Stealth Addresses, PoS + Masternodes
 ```bash
 git clone --depth 1 https://github.com/PRCYCoin/PRCYCoin.git
 ```
 
 ### PIVX
 - **Repo**: https://github.com/PIVX-Project/PIVX
-- **Doel**: SHIELD protocol (Sapling zk-SNARKs), view keys, shielded staking
-- **Clone (shallow)**:
+- **Doel**: SHIELD (Sapling zk-SNARKs), view keys
 ```bash
 git clone --depth 1 https://github.com/PIVX-Project/PIVX.git
 ```
 
-## Hybrid Architecture Related
+## Hybrid Architecture – Execution & Privacy Layers
 
-### Solana
-- **Repo**: https://github.com/solana-labs/solana (of anza-xyz/agave)
-- **Doel**: Execution layer voor agents & marktplaats (snel + goedkoop)
+### Solana (Agave)
+- **Repo**: https://github.com/anza-xyz/agave (huidige Solana validator / client)
+- **Doel**: Execution layer voor agents, marktplaats en micropayments
+```bash
+git clone --depth 1 https://github.com/anza-xyz/agave.git
+```
 
 ### Aztec
 - **Repo**: https://github.com/AztecProtocol/aztec-packages
-- **Doel**: Programmeerbare privacy + private smart contracts (Noir)
+- **Doel**: Programmeerbare privacy, private smart contracts (Noir), private state
+```bash
+git clone --depth 1 https://github.com/AztecProtocol/aztec-packages.git
+```
 
-### Andere nuttige referenties
-- EZKL / zkML tools: zoek op GitHub naar actuele zkML compilers
-- Agent frameworks: elizaOS, Fetch.ai uAgents, etc.
-
-## Aanbevolen lokale setup
+## Aanbevolen lokale setup (alles)
 
 ```bash
 mkdir -p dependencies
 cd dependencies
+
 git clone --depth 1 https://github.com/PRCYCoin/PRCYCoin.git
 git clone --depth 1 https://github.com/PIVX-Project/PIVX.git
-# Optioneel:
-# git clone --depth 1 https://github.com/AztecProtocol/aztec-packages.git
+git clone --depth 1 https://github.com/anza-xyz/agave.git
+git clone --depth 1 https://github.com/AztecProtocol/aztec-packages.git
 ```
 
-> **Let op**: De volledige Bitcoin-derived repositories (PRCY, PIVX) zijn groot. Gebruik altijd `--depth 1` tenzij je de volledige geschiedenis nodig hebt.
+> **Belangrijk**: Deze repositories zijn groot. Gebruik altijd `--depth 1`. Volledige clones kunnen meerdere GB zijn.
 
-## Status in deze repository
+## Status
 
-Deze Privacycoin-AI repository bevat **geen** git-submodules van de bovenstaande projecten (vanwege grootte).  
-Clone ze lokaal wanneer je due diligence of code-analyse wilt doen (zie issue #3).
+Deze Privacycoin-AI repository bevat **geen** git-submodules van de bovenstaande projecten vanwege hun omvang. Clone ze lokaal voor code-analyse of due diligence.
