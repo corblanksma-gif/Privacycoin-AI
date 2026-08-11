@@ -8,12 +8,9 @@
 - [x] LICENSE (MIT) + .gitignore
 - [x] README met badges
 - [x] Labels (tokenomics, zkml, agents, privacy, roadmap)
-- [x] Issue tracking (#1 t/m #5)
-- [x] Draft documenten:
-  - `docs/Tokenomics_Draft.md`
-  - `docs/Due_Diligence_Checklist.md`
-  - `docs/Agent_Protocol_Outline.md`
-  - `CONTRIBUTING.md`
+- [x] Issue tracking (#1 t/m #6)
+- [x] Draft documenten (Tokenomics, Due Diligence, Agent Protocol, CONTRIBUTING)
+- [x] **Blockchain-analyse 2026** + **Hybrid Architecture Recommendation**
 - [x] Issue #1 gesloten (setup afgerond)
 
 ## PDF genereren
@@ -23,10 +20,10 @@ pip install reportlab
 python scripts/generate_whitepaper.py
 ```
 
-## Alleen handmatig mogelijk (GitHub UI)
+## Nieuwe kern-documenten
 
-- Topics toevoegen: `privacy` `ai` `blockchain` `zkml` `decentralized-ai` `prcy` `pivx`
-- Discussions / Wiki aanzetten (Settings → Features)
+- [`docs/Architecture_Hybrid_Recommendation.md`](docs/Architecture_Hybrid_Recommendation.md) – **Solana + Aztec + PRCY/PIVX**
+- [`docs/Blockchain_Analysis_2026.md`](docs/Blockchain_Analysis_2026.md)
 
 ## Actieve werk-issues
 
@@ -36,12 +33,12 @@ python scripts/generate_whitepaper.py
 | [#3](https://github.com/corblanksma-gif/Privacycoin-AI/issues/3) | Due diligence PRCY + PIVX |
 | [#4](https://github.com/corblanksma-gif/Privacycoin-AI/issues/4) | Agent Protocol specificatie |
 | [#5](https://github.com/corblanksma-gif/Privacycoin-AI/issues/5) | zkML research & prototypes |
+| [#6](https://github.com/corblanksma-gif/Privacycoin-AI/issues/6) | Hybrid Architecture implementation |
 
-## Nog niet geautomatiseerd (buiten scope tools)
+## Alleen handmatig (GitHub UI)
 
-- Social media accounts (Twitter/X, Discord, Telegram)
-- Community building
-- Echte code / smart contracts / zk-circuits
+- Topics toevoegen: `privacy` `ai` `blockchain` `zkml` `decentralized-ai` `prcy` `pivx` `solana` `aztec`
+- Discussions / Wiki aanzetten
 
 ---
 **Repository**: https://github.com/corblanksma-gif/Privacycoin-AI
