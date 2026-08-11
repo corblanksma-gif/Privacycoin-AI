@@ -1,42 +1,47 @@
-# Privacycoin AI – Next Steps / TODO
+# Privacycoin AI – Status & Next Steps
 
-## Automatisch uitgevoerde stappen
+## ✅ Volledig geautomatiseerd
+
 - [x] Repository aangemaakt
-- [x] Whitepaper (Markdown) + Executive Summary toegevoegd
-- [x] **Volledige PDF-generator** toegevoegd (`scripts/generate_whitepaper.py`)
-- [x] LICENSE (MIT) toegevoegd
-- [x] .gitignore toegevoegd
-- [x] README opgezet + bijgewerkt
-- [x] Issue #1 aangemaakt en bijgewerkt
+- [x] Whitepaper (Markdown) + Executive Summary
+- [x] Volledige PDF-generator (`scripts/generate_whitepaper.py`)
+- [x] LICENSE (MIT) + .gitignore
+- [x] README met badges
+- [x] Labels (tokenomics, zkml, agents, privacy, roadmap)
+- [x] Issue tracking (#1 t/m #5)
+- [x] Draft documenten:
+  - `docs/Tokenomics_Draft.md`
+  - `docs/Due_Diligence_Checklist.md`
+  - `docs/Agent_Protocol_Outline.md`
+  - `CONTRIBUTING.md`
+- [x] Issue #1 gesloten (setup afgerond)
 
-## PDF genereren (nu volledig automatisch)
+## PDF genereren
 
 ```bash
-git clone https://github.com/corblanksma-gif/Privacycoin-AI.git
-cd Privacycoin-AI
 pip install reportlab
 python scripts/generate_whitepaper.py
 ```
-Dit produceert de complete 6-pagina `Privacycoin_AI_Whitepaper_v1.0.pdf`.
 
-## Optionele / handmatige stappen
+## Alleen handmatig mogelijk (GitHub UI)
 
-### Repository-instellingen
-- [ ] Topics toevoegen: `privacy`, `ai`, `blockchain`, `zkml`, `decentralized-ai`, `prcy`, `pivx`
-- [ ] Discussions / Wiki aanzetten indien gewenst
+- Topics toevoegen: `privacy` `ai` `blockchain` `zkml` `decentralized-ai` `prcy` `pivx`
+- Discussions / Wiki aanzetten (Settings → Features)
 
-### Inhoudelijke vervolgstappen
-- [ ] Community-feedback verzamelen op de whitepaper
-- [ ] Exacte tokenomics paper schrijven
-- [ ] Technische due diligence op PRCY- en PIVX-codebases
-- [ ] Multi-sig treasury ontwerp uitwerken
-- [ ] Agent-protocol specificatie (RFC-stijl)
-- [ ] zkML circuit prototypes
+## Actieve werk-issues
 
-### Marketing / zichtbaarheid
-- [ ] Twitter / X account
-- [ ] Discord of Telegram
-- [ ] Link naar deze repo in communicatie
+| Issue | Onderwerp |
+|-------|-----------|
+| [#2](https://github.com/corblanksma-gif/Privacycoin-AI/issues/2) | Tokenomics Paper |
+| [#3](https://github.com/corblanksma-gif/Privacycoin-AI/issues/3) | Due diligence PRCY + PIVX |
+| [#4](https://github.com/corblanksma-gif/Privacycoin-AI/issues/4) | Agent Protocol specificatie |
+| [#5](https://github.com/corblanksma-gif/Privacycoin-AI/issues/5) | zkML research & prototypes |
+
+## Nog niet geautomatiseerd (buiten scope tools)
+
+- Social media accounts (Twitter/X, Discord, Telegram)
+- Community building
+- Echte code / smart contracts / zk-circuits
 
 ---
-Dit bestand wordt bijgewerkt naarmate stappen worden afgerond.
+**Repository**: https://github.com/corblanksma-gif/Privacycoin-AI
