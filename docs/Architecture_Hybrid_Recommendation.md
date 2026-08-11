@@ -1,119 +1,75 @@
-# Privacycoin AI – Hybrid Architecture Recommendation
+# Privacycoin AI – Hybrid Architecture Recommendation (Updated)
 
-**Versie 1.0 – Augustus 2026**  
-Gebaseerd op de volledige blockchain-analyse (snelheid, kosten, schaalbaarheid, privacy en security).
+**Versie 1.1 – Augustus 2026**
 
-## 1. Samenvatting van de keuze
+## 1. Kernkeuze
 
-**Aanbevolen architectuur: Hybride multi-layer**
+**Hybride multi-layer architectuur**
 
-| Laag | Chain / Technologie | Primaire rol |
-|------|---------------------|--------------|
-| **Execution & Agent Layer** | **Solana** | Marktplaats, agent-to-agent interacties, micropayments, hoge frequentie |
-| **Privacy & Sensitive Logic Layer** | **Aztec** (zkL2 op Ethereum) | Private smart contracts, private state, escrow met privacy, selective disclosure |
-| **Legacy / Max Privacy Payments** | **PRCY + PIVX SHIELD** | Maximale transactionele privacy (RingCT + zk-SNARKs) |
-| **Private AI Compute (optioneel)** | **Zama fhEVM** of TEE + zkML | Verifiable / confidential AI inference |
-| **Settlement & Security Anchor** | Ethereum (via Aztec) | Hoogste security en finality voor kritieke assets |
+| Laag | Technologie | Rol |
+|------|-------------|-----|
+| Execution & Agent Layer | **Solana** | Marktplaats, agents, micropayments, hoge frequentie |
+| Privacy & Sensitive Logic | **Aztec** | Private smart contracts, private state, private escrow |
+| Max Privacy Payments | **PRCY + PIVX SHIELD** | Sterkste transactionele privacy |
+| Private AI Compute | zkML + optioneel Zama / TEE | Verifiable & confidential inference |
+| Security Anchor | Ethereum (via Aztec) | Hoogste security voor kritieke waarde |
 
-Deze combinatie levert de beste balans tussen:
-- **Goedkoopste** fees (Solana)
-- **Snelste** agent-interacties (Solana)
-- **Schaalbaarste** throughput
-- **Veiligste** privacy + Ethereum-security (Aztec)
-- Behoud van de bestaande PRCY/PIVX privacy-sterkte
+## 2. Waarom deze combinatie?
 
-## 2. Waarom deze hybride setup?
+- Solana wint op **snelheid + kosten** (cruciaal voor agent-economie)
+- Aztec wint op **programmeerbare privacy + Ethereum security**
+- PRCY/PIVX leveren de **maximale privacy** die het project van oorsprong nastreeft
+- Geen enkele single chain scoort optimaal op alle assen tegelijk
 
-### Probleem van single-chain keuzes
-- Pure high-TPS chains (Solana, Sui, Aptos) → uitstekend op snelheid/kosten, zwak op native privacy.
-- Pure privacy chains (Aleo, Midnight, Aztec) → sterk op privacy, (nog) lager in real-world TPS en liquiditeit dan Solana.
-- PRCY/PIVX alleen → uitstekende privacy, maar onvoldoende smart-contract capaciteit en schaal voor een AI-agent marktplaats.
+## 3. Data Flows
 
-### Voordelen van de hybride
-- Agents en marktplaats draaien op de goedkoopste/snelste chain (Solana).
-- Privacy-kritische operaties (private escrow, private agent state, sensitive data) draaien op Aztec.
-- Gebruikers die maximale privacy willen, kunnen via bridges naar PRCY/PIVX.
-- Ethereum-security via Aztec voor de meest waardevolle assets en governance.
+### Public Agent Call (snel & goedkoop)
+Solana registry → micropayment escrow op Solana → resultaat → reputation update
 
-## 3. Gedetailleerde Architectuur
+### Private Job
+Job creatie op Aztec (private state) → agents werken private → proof of settlement → optioneel public claim op Solana
 
-### 3.1 Execution Layer – Solana
-- Agent identity (compressed NFTs of Token-2022)
-- Marktplaats listings, matching, micropayments
-- Hoge-frequentie agent-to-agent calls
-- Liquidity pools en fee-collectie
-- Off-chain compute orchestration + on-chain settlement
+### Max Privacy Payment
+Waarde wordt gebridged naar PRCY of PIVX SHIELD voor volledige transactionele privacy
 
-**Waarom Solana?**  
-Real-world 1.500–4.000+ TPS, fees ~$0.00025, sub-seconde confirmaties, sterke AI-agent ecosystem in 2026.
+### Verifiable Inference
+Off-chain / private compute → ZK-proof → verificatie op Solana of Aztec
 
-### 3.2 Privacy Layer – Aztec
-- Private smart contracts (Noir)
-- Private state voor agents en escrow
-- Selective disclosure (compliance-vriendelijk waar nodig)
-- Private royalty- en payment-flows
-- Bridge naar/van Solana en Ethereum
+## 4. Bridge Strategie
 
-**Waarom Aztec?**  
-Sterkste programmeerbare privacy + private execution in 2026, met Ethereum als security-anchor.
+- Solana ↔ Aztec: prioritair (ZK of light-client bij voorkeur)
+- Solana/Aztec ↔ PRCY/PIVX: secondary, security-first
+- Duidelijke limieten, audits en monitoring
 
-### 3.3 Max-Privacy Payments – PRCY + PIVX SHIELD
-- RingCT + Bulletproofs + Stealth (PRCY)
-- zk-SNARKs SHIELD (PIVX)
-- Gebruikt voor gebruikers die absolute transactionele privacy willen
-- Bridges vanuit Solana/Aztec
+## 5. Token & Governance Impact
 
-### 3.4 Private AI Compute
-- zkML circuits (operator-decomposition) voor verifiable inference
-- Optioneel Zama fhEVM voor berekeningen op encrypted data
-- Resultaten worden on-chain geverifieerd (Solana of Aztec)
+- PCAI als multi-chain token
+- Fees primair op Solana (volume) + privacy premium op Aztec mogelijk
+- Governance kan multi-chain zijn, met zwaartepunt op de privacy- of execution-laag
 
-### 3.5 Data Flow (voorbeeld)
-1. User/Agent registreert identity op Solana (goedkoop).
-2. Gevoelige agent-state of escrow wordt op Aztec gezet (private).
-3. Micropayments en matching gebeuren op Solana.
-4. Bij behoefte aan maximale privacy wordt waarde naar PRCY/PIVX gebridged.
-5. AI-inference gebeurt off-chain of via private compute; proof gaat on-chain.
+## 6. Implementatie Fases
 
-## 4. Tokenomics Impact
+1. **Solana foundation** – identity, registry, basic marketplace, micropayments
+2. **Aztec privacy layer** – private escrow, private agent state
+3. **Bridges** – Solana-Aztec en daarna PRCY/PIVX
+4. **zkML integration** – verifiable inference capabilities
+5. **Full hybrid mainnet** – unified UX + governance
 
-- **PCAI token** (of upgraded PRCY) kan multi-chain zijn.
-- Fees op Solana → laag, stimuleert volume.
-- Privacy-premium op Aztec mogelijk.
-- 90% PRCY-premine blijft de financieringsbron; liquiditeit kan deels op Solana worden opgebouwd.
-- Cross-chain bridges moeten goed beveiligd en bij voorkeur ZK-based zijn.
-
-## 5. Implementatie Roadmap (aangepast)
-
-| Fase | Focus | Chains |
-|------|-------|--------|
-| 0 (nu) | Documentatie + due diligence | — |
-| 1 | Solana agent + marketplace prototype | Solana |
-| 2 | Aztec private contracts + bridges | Aztec + Solana |
-| 3 | PRCY/PIVX bridges + zkML proofs | Alle lagen |
-| 4 | Full hybrid mainnet + governance | Alle lagen |
-
-## 6. Risico’s & Mitigaties
+## 7. Risico’s & Mitigaties
 
 | Risico | Mitigatie |
 |--------|-----------|
-| Bridge risk | Gebruik battle-tested of ZK-bridges, limieten, audits |
-| Complexiteit multi-chain | Duidelijke SDK + abstractielaag voor developers |
-| Liquidity fragmentatie | Incentive programma’s + unified frontend |
-| Solana outages | Fallback routing + Aztec als secondary path |
-| Privacy leakage bij bridging | Strict privacy-preserving bridge designs |
+| Bridge exploits | ZK-bridges, limieten, audits, bug bounties |
+| Complexiteit | Sterke SDK + abstractielaag |
+| Liquidity split | Incentives + unified frontend |
+| Solana stabiliteit | Fallback routes via Aztec |
+| Privacy leakage | Strict bridge en metadata policies |
 
-## 7. Conclusie
+## 8. Conclusie
 
-De **hybride Solana (execution) + Aztec (privacy) + PRCY/PIVX (max privacy)** architectuur is de sterkste keuze om de doelen van Privacycoin AI tegelijkertijd te realiseren:
+De hybride Solana + Aztec + PRCY/PIVX architectuur is de sterkste manier om de doelen van Privacycoin AI tegelijk te realiseren: goedkoop, schaalbaar, snel, veilig en privacy-preserving.
 
-- Goedkoopste agent-economie
-- Snelste interacties
-- Schaalbaarheid
-- Sterke, programmeerbare privacy
-- Behoud van de bestaande privacy-erfgoed van PRCY en PIVX
-
-Dit document dient als basis voor de technische due diligence (issue #3) en de verdere protocol-specificatie (issue #4).
+Dit document is leidend voor verdere development en due diligence.
 
 ---
-*Dit is een levende aanbeveling. Wordt bijgewerkt naarmate nieuwe data over TPS, fees en privacy-oplossingen beschikbaar komen.*
+*Versie 1.1 – uitgebreid met data flows, bridge strategie en implementatiefases.*
